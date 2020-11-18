@@ -34,7 +34,7 @@ public class MalletLogger extends Logger
 			// TODO What is going on here?  This is causing an error
 			//System.setProperty("java.util.logging.config.class", "cc.mallet.util.Logger.DefaultConfigurator");
 			try {
-				InputStream s = MalletLogger.class.getResourceAsStream ("resources/logging.properties");
+				InputStream s = MalletLogger.class.getResourceAsStream ("/logging.properties");
 				if (s == null)
 					throw new IOException ();
 				LogManager.getLogManager().readConfiguration(s);
