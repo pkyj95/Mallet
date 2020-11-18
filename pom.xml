@@ -117,6 +117,7 @@
             </plugin>
 
             <!-- Javadoc Generation -->
+           <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -133,8 +134,10 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
 
             <!-- Code Coverage Reports -->
+           <!--
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -154,6 +157,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
 
             <!-- disable signing in order to simplify integration with TravisCI
             <plugin>
@@ -216,25 +220,29 @@
         </dependency>
     </dependencies>
 
+  <!--
     <distributionManagement>
-        <!-- <snapshotRepository>
+        <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository> -->
-         <repository>
-                        <id>sec-classification-artifactory</id>
-                        <name>Data Classification Toolkit artifact repository</name>
-                        <url>https://na.artifactory.swg-devops.com:443/artifactory/sec-classification-team-maven-local</url>
-                </repository>
-                <snapshotRepository>
-                        <id>sec-classification-artifactory</id>
-                        <name>Data Classification Toolkit artifact repository</name>
-                        <url>https://na.artifactory.swg-devops.com:443/artifactory/sec-classification-team-maven-local</url>
-                </snapshotRepository>
+        </repository> 
     </distributionManagement>
+  -->
+  <distributionManagement>
+    <repository>
+        <id>sec-classification-artifactory</id>
+        <name>releases</name>
+        <url>https://na.artifactory.swg-devops.com:443/artifactory/sec-classification-team-maven-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>snapshots</name>
+        <url>https://na.artifactory.swg-devops.com:443/artifactory/sec-classification-team-maven-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
